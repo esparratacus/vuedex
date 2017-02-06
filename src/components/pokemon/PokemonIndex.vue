@@ -5,7 +5,6 @@
       <router-link :to="'pokemon/' + pkmn.name"><md-icon>send</md-icon> <span>{{ pkmn.name }}</span></router-link> 
     </md-list-item>
     </md-list>
-    <md-button class="md-raised md-primary" large @click="fetchData">Get pokemons!</md-button>
   </div>  
 </template>
 

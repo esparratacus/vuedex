@@ -13,8 +13,13 @@
         <h3 class="md-title">Sidenav content</h3>
       </div>
     </md-toolbar>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate esse necessitatibus beatae nobis, deserunt ut est fugit, tempora deleniti, eligendi commodi doloribus. Nemo, assumenda possimus, impedit inventore perferendis iusto!</p>
+      <div class="phone-viewport">
+        <md-list>
+          <md-list-item>
+          <router-link :to="'/pokemon'"><md-icon>move_to_inbox</md-icon> <span>pokemon</span></router-link>
+          </md-list-item>
+        </md-list>
+      </div>
   </md-sidenav>  
   </div>
 </template>

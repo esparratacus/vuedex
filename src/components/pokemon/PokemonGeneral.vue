@@ -8,7 +8,7 @@
     </md-card-header-text>
 
     <md-card-media>
-      <img :src="pokemon_data.sprites.front_default" alt="People">
+      <img :src="pokemon_sprite" alt="People">
     </md-card-media>
   </md-card-header>
 
@@ -25,12 +25,12 @@ export default {
   data () {
     return {
       pkmn_name: this.$route.params.pkmn_name,
-      pokemon_data: {}
+      pokemon_sprite: ''
     }
   },
   watch: {
     '$route' (to, from) {
-      this.name = to.params.pkmn_name
+      this.pokemon_data = this.fetchPokemonData(this.name)
     }
   },
   methods: {
@@ -38,8 +38,7 @@ export default {
       this.$http.get('pokemon/' + pkmnName)
       .then(response => { return response.json() })
       .then(data => {
-        this.pokemon_data = data.results
-        console.log(this.pokemon_data)
+        this.pokemon_sprite = data.sprites.front_default
       })
     }
   },
