@@ -4,7 +4,9 @@
   <md-card-header>
     <md-card-header-text>
       <div class="md-title">{{this.pkmn_name}}</div>
-      <div class="md-subhead">Subtitle here</div>
+      <div class="md-subhead">
+        <div v-for="type in pokemon_types" :class="['pkm-type', type.type.name]"><span>{{type.type.name}}</span></div>
+      </div>
     </md-card-header-text>
 
     <md-card-media>
@@ -25,7 +27,8 @@ export default {
   data () {
     return {
       pkmn_name: this.$route.params.pkmn_name,
-      pokemon_sprite: ''
+      pokemon_sprite: '',
+      pokemon_types: []
     }
   },
   watch: {
@@ -39,6 +42,7 @@ export default {
       .then(response => { return response.json() })
       .then(data => {
         this.pokemon_sprite = data.sprites.front_default
+        this.pokemon_types = data.types
       })
     }
   },

@@ -2,7 +2,7 @@
   <div>
    <md-list>
       <md-list-item v-for="pkmn in pokemons">
-      <router-link :to="'pokemon/' + pkmn.name"><md-icon>send</md-icon> <span>{{ pkmn.name }}</span></router-link> 
+      <router-link :to="'pokemon/' + pkmn.name"><md-icon>send</md-icon> <span class="pkspr pkmn-bulbasaur"></span></router-link> 
     </md-list-item>
     </md-list>
   </div>  
